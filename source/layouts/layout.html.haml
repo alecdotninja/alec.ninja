@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title= current_page.data.title || "alec.ninja"
+    
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %meta{charset: "utf-8"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}/
+    
+    = stylesheet_link_tag "main"
+
+    %noscript
+      = stylesheet_link_tag "noscript"
+
+  %body.is-loading
+    #wrapper
+      = yield
+
+      %footer#footer
+        %ul.copyright
+          %li &copy; Alec Larsen
+
+    = javascript_include_tag "main"
